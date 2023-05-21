@@ -9,19 +9,5 @@ module.exports = merge(common(), {
 
   devtool: "hidden-source-map",
 
-  plugins: [
-    // ビルド前に、/dist/images/内の画像を/src/images/にコピーする
-    // new FileManagerPlugin({
-    //   events: {
-    //     onStart: {
-    //       copy: [
-    //         {
-    //           source: path.resolve(__dirname, "dist/images/*"),
-    //           destination: path.resolve(__dirname, "src/images/"),
-    //         },
-    //       ],
-    //     },
-    //   },
-    // }),
-  ],
+  plugins: [],
 });

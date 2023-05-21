@@ -72,7 +72,7 @@ module.exports = () => ({
   resolve: {
     extensions: [".ts", ".js"],
     alias: {
-      "@": path.resolve(__dirname, "src/"), // `src` はエイリアスのルートディレクトリに置き換えてください。
+      "@": path.resolve(__dirname, "src/"), // ~でエイリアスを指定したらエラーでたので@に変更
       "@image": path.resolve(__dirname, "src/assets/images/"),
       "@style": path.resolve(__dirname, "src/scss/"),
     },

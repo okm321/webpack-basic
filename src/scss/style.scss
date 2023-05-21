@@ -1,11 +1,9 @@
+@use "foundation";
+@use "layout";
 @use "@style/global" as g;
 
-h1 {
-  color: red;
-}
-
 .test {
-  color: g.$primaryColor;
+  color: g.$color-global;
   margin-top: map-get(g.$spaces, 10);
   background-image: url("@image/smart_phone.png");
   @include g.font-normal;

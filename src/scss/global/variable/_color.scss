@@ -1,11 +1,24 @@
-// BasicColor
-$primaryColor: #5674b9;
-$secondaryColor: #fcd12a;
-$accentColor: #e57373;
-$warningColor: #ff6f00;
-$successColor: #2e7d32;
-$errorColor: #c62828;
-$infoColor: #039be5;
-$disabledColor: #cdcdcd;
-$brightColor: #fff;
-$secondaryBrightColor: #f5f5f5;
+/**
+ * @file - 色周りの変数を管理するファイル
+ * @see https://qiita.com/1natsu172/items/ef6b0fcba6bbe380df1e
+ * Palette - このプロジェクトで使う色を定義する
+ * Color - 特定の色を使うエリアを定義する
+ */
+
+/*==== Palette ====*/
+// basic color
+$palette-primary: #5674b9;
+$palette-secondary: #fcd12a;
+$palette-accent: #e57373;
+$palette-warning: #ff6f00;
+$palette-success: #2e7d32;
+$palette-error: #c62828;
+$palette-info: #039be5;
+$palette-disabled: #cdcdcd;
+$palette-bright: #fff;
+$palette-dark: #333;
+
+/*==== Color ====*/
+$color-global: $palette-primary;
+$color-global-header-background: $palette-success;
+$color-base-text: $palette-dark;
