@@ -1,8 +1,13 @@
+@use "@style/global" as g;
+
 h1 {
   color: red;
 }
 
 .test {
-  color: blue;
-  // background-image: url("../images/aaa.png");
+  color: g.$primaryColor;
+  margin-top: map-get(g.$spaces, 10);
+  background-image: url("@image/smart_phone.png");
+  @include g.font-normal;
+  @include g.flex-center;
 }

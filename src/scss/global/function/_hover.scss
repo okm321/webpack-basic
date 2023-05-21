@@ -1,0 +1,7 @@
+/**
+ * ホバーした時の色を引数の色を薄くする関数
+ * @param $color - 色
+ */
+@function hoverColor($color) {
+  @return lighten($color, 30%);
+}

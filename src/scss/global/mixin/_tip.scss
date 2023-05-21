@@ -1,0 +1,61 @@
+/** 
+ * @file - flex周りのmixinを管理する
+ */
+@use "@style/global/variable" as v;
+
+/** 
+ * 複数行のテキストに下線を引く
+ * @param $color - 下線の色
+ * @param $height - 下線の高さ
+ */
+@mixin multiple-line-underline($color: v.$primaryColor, $height: 65%) {
+  background: linear-gradient(transparent $height, $color 0%);
+  display: inline;
+}
+
+/**
+ * 疑似要素で三角形
+ * @param $direction - 三角形の方向
+ * @param $width - 三角形の横幅
+ * @param $height - 三角形の高さ
+ * @param $color - 三角形の色
+ */
+@mixin triangle($direction, $width, $height, $color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  $valWidth: $width / 2;
+  $valHeight: $height / 2;
+  @if ($direction == top) {
+    border-width: 0 $valWidth $height $valWidth;
+    border-color: transparent transparent $color transparent;
+  } @else if ($direction == left) {
+    border-width: $valHeight $width $valHeight 0;
+    border-color: transparent $color transparent transparent;
+  } @else if ($direction == right) {
+    border-width: $valHeight 0 $valHeight $width;
+    border-color: transparent transparent transparent $color;
+  } @else if ($direction == bottom) {
+    border-width: $height $valWidth 0 $valWidth;
+    border-color: $color transparent transparent transparent;
+  }
+}
+
+/**
+ * 親要素に対して中央寄席
+ * @param $direction - 中央寄せの方向
+ */
+@mixin center($direction) {
+  position: absolute;
+  @if $direction==xy {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $direction==x {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $direction==y {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

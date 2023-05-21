@@ -1,0 +1,7 @@
+/**
+ * pxをremに変更する関数
+ * @param $px - px
+ */
+@function rem($px) {
+  @return $px * 0.0625rem;
+}

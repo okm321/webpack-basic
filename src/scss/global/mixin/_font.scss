@@ -1,0 +1,9 @@
+/** 
+ * @file - フォントのタイプのmixinを管理する
+ */
+@use "@style/global/variable" as v;
+
+@mixin font-normal {
+  font-family: v.$font-normal;
+  font-weight: 400;
+}

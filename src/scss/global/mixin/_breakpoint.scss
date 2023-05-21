@@ -1,0 +1,32 @@
+/** 
+ * @file - ブレイクポイントのmixinを管理する
+ */
+@use "@style/global/variable" as v;
+
+// $max-width以内のブレークポイント
+@mixin bp-less($max-width) {
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+// $min-width以上のブレークポイント
+@mixin bp-larger($min-width) {
+  @media screen and (min-width: $min-width + 1px) {
+    @content;
+  }
+}
+
+// $min-width ~ $max-widthのブレークポイント
+@mixin bp-between($min-width, $max-width) {
+  @media screen and (min-width: $min-width + 1px) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+// デバイス固定のメディアクエリ指定
+@mixin bp-fixed($bp) {
+  @media #{map-get(v.$breakpoints, $bp)} {
+    @content;
+  }
+}

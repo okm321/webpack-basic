@@ -1,0 +1,23 @@
+/** 
+ * @file - flex周りのmixinを管理する
+ */
+@use "@style/global/variable" as v;
+
+// flexboxで要素を上下左右中央にする場合
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// flexboxで要素を上下中央にする場合
+@mixin flex-center-y {
+  display: flex;
+  align-items: center;
+}
+
+// flexboxで要素を左右中央にする場合
+@mixin flex-center-x {
+  display: flex;
+  justify-content: center;
+}

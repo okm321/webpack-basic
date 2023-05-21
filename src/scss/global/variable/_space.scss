@@ -1,0 +1,16 @@
+/**
+ * @file - スペース系の変数を管理するファイル
+ */
+// 基準となるスペース
+$base-space: 4px;
+
+$spaces: ();
+@for $i from 0 through 40 {
+  $spaces: map-merge(
+    $spaces,
+    (
+      $i: $base-space * $i,
+    )
+  );
+}
+// $spaces: ( 1: 4px, 2: 8px )

@@ -72,7 +72,9 @@ module.exports = () => ({
   resolve: {
     extensions: [".ts", ".js"],
     alias: {
-      "~": path.resolve(__dirname, "src/"), // `src` はエイリアスのルートディレクトリに置き換えてください。
+      "@": path.resolve(__dirname, "src/"), // `src` はエイリアスのルートディレクトリに置き換えてください。
+      "@image": path.resolve(__dirname, "src/assets/images/"),
+      "@style": path.resolve(__dirname, "src/scss/"),
     },
   },
 
@@ -113,7 +115,6 @@ module.exports = () => ({
           {
             loader: "postcss-loader",
             options: {
-              sourceMap: true, //ソースマップを有効
               postcssOptions: {
                 plugins: [[require("autoprefixer")({ grid: true })]],
               },
@@ -131,7 +132,14 @@ module.exports = () => ({
         test: /\.png|\.jpg|\.jpeg|\.webp/,
         type: "asset/resource",
         generator: {
-          filename: "images/[name][contenthash][ext]",
+          filename: "./images/[name][contenthash][ext]",
+        },
+      },
+      {
+        test: /\.ttf|\.woff/,
+        type: "asset/resource",
+        generator: {
+          filename: "./fonts/[name][contenthash][ext]",
         },
       },
     ],

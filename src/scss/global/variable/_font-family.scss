@@ -1,0 +1,8 @@
+/**
+ * @file - フォントの変数を管理する
+ */
+@font-face {
+  font-family: "reggae";
+  src: url("@/assets/fonts/ReggaeOne-Regular.ttf");
+}
+$font-normal: "reggae";
